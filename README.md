@@ -75,34 +75,27 @@
 
 ## 📱 客户端改造
 
-> 抖音 4K 系列：一个母仓库装全部平台（PC 补丁 + 手机网页 + 安卓 App），一个只装 PC 双击即用版。
+> 抖音 4K 改造：PC 一键补丁 + 手机网页油猴脚本 + 安卓壳 App，全在这一个仓库里。
 
 | 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
-| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | `v1.1` |
-| **[抖音 4K 一键补丁](https://github.com/hutaodog/douyin-4k-patch)** | 只要 PC 版的拿走这个。让抖音电脑版每条视频都按它所能提供的最高画质播放（含 4K60），不会看着看着被悄悄降档。双击即用，幂等安装，附还原脚本 | `JavaScript` · `PowerShell` | `v1.5` |
+| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | `v1.1` |
 
 <details>
-<summary><b>两个仓库怎么选</b></summary>
+<summary><b>三个端怎么用</b></summary>
 
-- **只想在电脑上看 4K** → 下 [`douyin-4k-patch`](https://github.com/hutaodog/douyin-4k-patch/releases/latest) 的 Release，双击 `一键开启4K.cmd`，完事。
-- **还想在手机上看 / 想搞懂原理** → 进 [`douyin-4k-mod`](https://github.com/hutaodog/douyin-4k-mod)。里面有：
-  - `pc-oneclick/` — PC 补丁的**开发主线**，比公开版 Release 的 v1.5 更新（含 2026-11-16 高画质起播修复，该修复尚未打 tag）
-  - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本
-  - `mobile-app/` — 安卓壳 App（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
-  - `docs/` — 24 篇从零到定稿的开发记录，含逆向过程与失败尝试
+- **电脑上看 4K** → `pc-oneclick/`，双击 `一键开启4K.cmd`，按提示走完（若抖音正在运行会自动关闭并在打完后重开）。还原双击 `恢复原版.cmd`。之前装过旧版可直接覆盖安装——安装器按标记先剥离旧补丁再追加，不会叠加两份。
+- **手机浏览器上看 4K** → `mobile-web/douyin-4k.user.js`，Tampermonkey / Kiwi 装油猴脚本，浏览器必须切「桌面版网站」（移动版网页只给 720P 水印流）。
+- **手机原生 App** → `mobile-app/`，系统 WebView 打底 + 原生 MediaPlayer 硬解 HEVC，已在 Redmi K40 实测 3840×2160 出画面。
+
+实机效果以解码尺寸为准，不以「超清 4K」标签作为画质证据；PC 版按 `Alt+I` 可看真实解码分辨率。
 
 </details>
 
 <details>
-<summary><b>PC 补丁怎么用</b></summary>
+<summary><b>想搞懂原理看这里</b></summary>
 
-1. 下载 [最新 Release](https://github.com/hutaodog/douyin-4k-patch/releases/latest) 里的 `douyin-4k-patch-v1.5.zip`
-2. 双击 **`一键开启4K.cmd`**，按提示走完（若抖音正在运行会自动关闭并在打完后重开）
-3. 打开抖音点任意视频，右下角清晰度应显示「超清 4K」或该视频最高档
-4. 还原：双击 **`恢复原版.cmd`**
-
-之前装过旧版可以直接覆盖安装——安装器按标记先剥离旧补丁再追加，不会叠加两份。
+`docs/` 下 **24 篇**从零到定稿的开发记录，包括：为什么抖音默认不是 4K、接口逆向总览、画质档位对照表、安卓壳 K40 实测、PC 高画质起播修复报告、以及一路踩过的坑和失败的尝试。
 
 </details>
 
@@ -136,7 +129,6 @@
 | 更新日 | 项目 |
 |:--|:--|
 | 2026-11-16 | [抖音 4K 改造](https://github.com/hutaodog/douyin-4k-mod) — 高画质 HEVC 起播修复 |
-| 2026-11-12 | [抖音 4K 一键补丁](https://github.com/hutaodog/douyin-4k-patch) — v1.5 修复换源静默失败 |
 | 2026-10-22 | [证件照排版助手](https://github.com/hutaodog/idphoto-layout-studio) — v1.6.6 去掉照片列表、修复拖放 |
 | 2026-10-16 | [DSH API 代理](https://github.com/hutaodog/dsh-api-proxy) — v1.0.6 |
 | 2026-09-11 | [DSH 语音输入](https://github.com/hutaodog/dsh-voice-input) — 首个版本 |
@@ -150,7 +142,7 @@
 
 <div align="center">
 
-**另有 10 个私有仓库**（开发中 / 个人自用，含游戏自动化生态与 Minecraft 模组移植），不在此页列出。
+**另有 11 个私有仓库**（开发中 / 个人自用，含游戏自动化生态与 Minecraft 模组移植），不在此页列出。
 
 <sub>本页为手工整理的导航，最后更新 2026-11-23</sub>
 
