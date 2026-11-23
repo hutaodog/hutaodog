@@ -79,7 +79,7 @@
 
 | 项目 | 说明 | 技术栈 | 最新 |
 |:--|:--|:--|:--|
-| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **23 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | `v1.5` |
+| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | 源码 `9e18bef`<br><sub>2026-11-16</sub> |
 | **[抖音 4K 一键补丁](https://github.com/hutaodog/douyin-4k-patch)** | 只要 PC 版的拿走这个。让抖音电脑版每条视频都按它所能提供的最高画质播放（含 4K60），不会看着看着被悄悄降档。双击即用，幂等安装，附还原脚本 | `JavaScript` · `PowerShell` | `v1.5` |
 
 <details>
@@ -87,10 +87,10 @@
 
 - **只想在电脑上看 4K** → 下 [`douyin-4k-patch`](https://github.com/hutaodog/douyin-4k-patch/releases/latest) 的 Release，双击 `一键开启4K.cmd`，完事。
 - **还想在手机上看 / 想搞懂原理** → 进 [`douyin-4k-mod`](https://github.com/hutaodog/douyin-4k-mod)。里面有：
-  - `pc-oneclick/` — 和上面那个 Release 同源的 PC 补丁
+  - `pc-oneclick/` — PC 补丁的**开发主线**，比公开版 Release 的 v1.5 更新（2026-11-16 高画质起播修复，尚未发布成 tag）
   - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本
   - `mobile-app/` — 安卓壳 App（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
-  - `docs/` — 23 篇从零到定稿的开发记录，含逆向过程与失败尝试
+  - `docs/` — 24 篇从零到定稿的开发记录，含逆向过程与失败尝试
 
 </details>
 
