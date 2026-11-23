@@ -79,23 +79,8 @@
 
 | 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
-| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | PC `v1.5`<br>网页 `v2.0.0`<br>App `1.0.0` |
+| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | `v1.1` |
 | **[抖音 4K 一键补丁](https://github.com/hutaodog/douyin-4k-patch)** | 只要 PC 版的拿走这个。让抖音电脑版每条视频都按它所能提供的最高画质播放（含 4K60），不会看着看着被悄悄降档。双击即用，幂等安装，附还原脚本 | `JavaScript` · `PowerShell` | `v1.5` |
-
-<details>
-<summary><b>douyin-4k-mod 的版本号怎么读</b></summary>
-
-这是个**母仓库**，三个端各自独立版本，GitHub Release 标签（`v1.1`，2026-10-27）只是最早那次打包，**不代表当前状态**：
-
-| 端 | 版本 | 位置 | 说明 |
-|:--|:--|:--|:--|
-| PC 补丁 | `v1.5` + 2026-11-16 修复 | `pc-oneclick/` · `dypc4k.ps1` | v1.5 是最后一个定稿；11-16 的高画质 HEVC 起播修复**只随提交上传，未打 tag** |
-| 手机网页 | `v2.0.0` | `mobile-web/douyin-4k.user.js` · `@version` | 油猴脚本，桌面版 UA + AB 改写固定 4K |
-| 安卓壳 App | `1.0.0` | `mobile-app/AndroidManifest.xml` · `android:versionName` | 系统 WebView 打底 + 原生 MediaPlayer 硬解 HEVC |
-
-`package.json` 的 `1.0.0` 只是工程壳的版本，不用管。
-
-</details>
 
 <details>
 <summary><b>两个仓库怎么选</b></summary>
@@ -103,8 +88,8 @@
 - **只想在电脑上看 4K** → 下 [`douyin-4k-patch`](https://github.com/hutaodog/douyin-4k-patch/releases/latest) 的 Release，双击 `一键开启4K.cmd`，完事。
 - **还想在手机上看 / 想搞懂原理** → 进 [`douyin-4k-mod`](https://github.com/hutaodog/douyin-4k-mod)。里面有：
   - `pc-oneclick/` — PC 补丁的**开发主线**，比公开版 Release 的 v1.5 更新（含 2026-11-16 高画质起播修复，该修复尚未打 tag）
-  - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本 `v2.0.0`
-  - `mobile-app/` — 安卓壳 App `1.0.0`（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
+  - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本
+  - `mobile-app/` — 安卓壳 App（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
   - `docs/` — 24 篇从零到定稿的开发记录，含逆向过程与失败尝试
 
 </details>
