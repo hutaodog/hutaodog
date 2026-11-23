@@ -25,10 +25,10 @@
 
 ## 🖥️ 桌面工具
 
-| 项目 | 说明 | 技术栈 | 最新 |
+| 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
 | **[证件照排版助手](https://github.com/hutaodog/idphoto-layout-studio)** | 导入照片 → 自动抠图换底 → 按规格裁剪 → 排版到 5/6/7 寸相纸 → 导出可直接冲印。全程离线，CPU 推理约 1 秒/张 | `Python` · `PySide6` · `MODNet` · `ONNX` | `v1.6.6` |
-| **[VD Streamer 汉化补丁](https://github.com/hutaodog/VirtualDesktop-Chinese)** | Virtual Desktop Streamer 简体中文界面补丁。自动定位程序、识别版本、备份原版，不依赖 Python / .NET Runtime | `C#` · `PowerShell` · `Go` | 源码 |
+| **[VD Streamer 汉化补丁](https://github.com/hutaodog/VirtualDesktop-Chinese)** | Virtual Desktop Streamer 简体中文界面补丁。自动定位程序、识别版本、备份原版，不依赖 Python / .NET Runtime | `C#` · `PowerShell` · `Go` | 无版本号<br><sub>commit 6 次</sub> |
 
 <details>
 <summary><b>证件照助手能做什么</b></summary>
@@ -45,10 +45,10 @@
 
 ## 🔌 DeepSeek Harness 插件
 
-| 项目 | 说明 | 技术栈 | 最新 |
+| 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
 | **[DSH API 代理](https://github.com/hutaodog/dsh-api-proxy)** | 只给指定的 API 域名挂梯子。本机托管 mihomo 核心、导入 Clash 订阅、按域名精确分流，其余流量全部直连 | `Python` · `mihomo` | `v1.0.6` |
-| **[DSH 语音输入](https://github.com/hutaodog/dsh-voice-input)** | 输入框右侧麦克风按钮，实时流式识别，结果追加进输入框不自动提交。支持硅基流动 / 千问两家 ASR | `JavaScript` | 源码 |
+| **[DSH 语音输入](https://github.com/hutaodog/dsh-voice-input)** | 输入框右侧麦克风按钮，实时流式识别，结果追加进输入框不自动提交。支持硅基流动 / 千问两家 ASR | `JavaScript` | `0.1.0` |
 
 <details>
 <summary><b>为什么 API 代理不是「直接开全局梯子」</b></summary>
@@ -64,7 +64,7 @@
 
 ## 🎮 游戏自动化
 
-| 项目 | 说明 | 技术栈 | 最新 |
+| 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
 | **[FH6Auto](https://github.com/hutaodog/FH6Auto)** | FH6 视觉脚本：截图识别游戏状态 → 判断是否进入目标页 → 触发键鼠 → 出错自动恢复。支持循环跑图、批量买车、超级抽奖、模块串联 | `Python` · `OpenCV` | `v1.1.7.3` |
 | **[QuickBackupM Reforged 1.20.1](https://github.com/hutaodog/QuickBackupM-Reforged-1.20.1)** | Minecraft 1.20.1 备份 / 回档 Mod（仅 Fabric）。上游 v3 的社区移植分支，支持权限、热键、自动备份与服务器用法 | `Java` · `Fabric` · `NeoForge` | `v3.3.1-1.20.1` |
@@ -77,19 +77,34 @@
 
 > 抖音 4K 系列：一个母仓库装全部平台（PC 补丁 + 手机网页 + 安卓 App），一个只装 PC 双击即用版。
 
-| 项目 | 说明 | 技术栈 | 最新 |
+| 项目 | 说明 | 技术栈 | 版本 |
 |:--|:--|:--|:--|
-| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | 源码 `9e18bef`<br><sub>2026-11-16</sub> |
+| **[抖音 4K 改造（全平台）](https://github.com/hutaodog/douyin-4k-mod)** | 母仓库。PC 一键补丁 + **手机网页油猴脚本**（86KB 单文件）+ **安卓壳 App**（原生播放器、推荐流复刻），附 **24 篇开发记录**：从「为什么抖音默认不是 4K」到接口逆向总览、画质档位对照表、踩坑清单 | `JavaScript` · `Java` · `PowerShell` | PC `v1.5`<br>网页 `v2.0.0`<br>App `1.0.0` |
 | **[抖音 4K 一键补丁](https://github.com/hutaodog/douyin-4k-patch)** | 只要 PC 版的拿走这个。让抖音电脑版每条视频都按它所能提供的最高画质播放（含 4K60），不会看着看着被悄悄降档。双击即用，幂等安装，附还原脚本 | `JavaScript` · `PowerShell` | `v1.5` |
+
+<details>
+<summary><b>douyin-4k-mod 的版本号怎么读</b></summary>
+
+这是个**母仓库**，三个端各自独立版本，GitHub Release 标签（`v1.1`，2026-10-27）只是最早那次打包，**不代表当前状态**：
+
+| 端 | 版本 | 位置 | 说明 |
+|:--|:--|:--|:--|
+| PC 补丁 | `v1.5` + 2026-11-16 修复 | `pc-oneclick/` · `dypc4k.ps1` | v1.5 是最后一个定稿；11-16 的高画质 HEVC 起播修复**只随提交上传，未打 tag** |
+| 手机网页 | `v2.0.0` | `mobile-web/douyin-4k.user.js` · `@version` | 油猴脚本，桌面版 UA + AB 改写固定 4K |
+| 安卓壳 App | `1.0.0` | `mobile-app/AndroidManifest.xml` · `android:versionName` | 系统 WebView 打底 + 原生 MediaPlayer 硬解 HEVC |
+
+`package.json` 的 `1.0.0` 只是工程壳的版本，不用管。
+
+</details>
 
 <details>
 <summary><b>两个仓库怎么选</b></summary>
 
 - **只想在电脑上看 4K** → 下 [`douyin-4k-patch`](https://github.com/hutaodog/douyin-4k-patch/releases/latest) 的 Release，双击 `一键开启4K.cmd`，完事。
 - **还想在手机上看 / 想搞懂原理** → 进 [`douyin-4k-mod`](https://github.com/hutaodog/douyin-4k-mod)。里面有：
-  - `pc-oneclick/` — PC 补丁的**开发主线**，比公开版 Release 的 v1.5 更新（2026-11-16 高画质起播修复，尚未发布成 tag）
-  - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本
-  - `mobile-app/` — 安卓壳 App（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
+  - `pc-oneclick/` — PC 补丁的**开发主线**，比公开版 Release 的 v1.5 更新（含 2026-11-16 高画质起播修复，该修复尚未打 tag）
+  - `mobile-web/douyin-4k.user.js` — 手机网页版油猴脚本 `v2.0.0`
+  - `mobile-app/` — 安卓壳 App `1.0.0`（FeedActivity / PlayerActivity / ProfileActivity，走原生播放器 + 接口取流）
   - `docs/` — 24 篇从零到定稿的开发记录，含逆向过程与失败尝试
 
 </details>
@@ -112,11 +127,13 @@
 
 > 这三个是上游项目的完整备份 / 自用版本，原作者与上游链接一并标注。
 
-| 项目 | 上游 | 说明 | 技术栈 |
-|:--|:--|:--|:--|
-| **[Ayanami-api-enhanced](https://github.com/hutaodog/Ayanami-api-enhanced)** | [NeteaseCloudMusicApiEnhanced](https://github.com/NeteaseCloudMusicApiEnhanced/api-enhanced) | 网易云音乐 API 增强版，自原版 v4.28.0 后自行维护。**391 个接口文件**，npm 发布 `@neteasecloudmusicapienhanced/api` | `JavaScript` · `Node.js` |
-| **[HGhub](https://github.com/hutaodog/HGhub)** | [bashirian777/HGhub](https://github.com/bashirian777/HGhub) | YellowFruit 第三方客户端，基于 Rust + Tauri 2 的跨平台界面实践 | `TypeScript` · `Rust` · `Tauri 2` |
-| **[biliTickerBuyBackup](https://github.com/hutaodog/biliTickerBuyBackup)** | [mikumifa/biliTickerBuy](https://github.com/mikumifa/biliTickerBuy) | B 站会员购购票辅助工具的完整备份 | `Python` · `PyQt` |
+| 项目 | 上游 | 说明 | 技术栈 | 版本 |
+|:--|:--|:--|:--|:--|
+| **[Ayanami-api-enhanced](https://github.com/hutaodog/Ayanami-api-enhanced)** | [NeteaseCloudMusicApiEnhanced](https://github.com/NeteaseCloudMusicApiEnhanced/api-enhanced) | 网易云音乐 API 增强版，自原版 v4.28.0 后自行维护。**391 个接口文件**，npm 发布 `@neteasecloudmusicapienhanced/api` | `JavaScript` · `Node.js` | `4.32.0` |
+| **[HGhub](https://github.com/hutaodog/HGhub)** | [bashirian777/HGhub](https://github.com/bashirian777/HGhub) | YellowFruit 第三方客户端，基于 Rust + Tauri 2 的跨平台界面实践 | `TypeScript` · `Rust` · `Tauri 2` | `1.2.1` |
+| **[biliTickerBuyBackup](https://github.com/hutaodog/biliTickerBuyBackup)** | [mikumifa/biliTickerBuy](https://github.com/mikumifa/biliTickerBuy) | B 站会员购购票辅助工具的完整备份 | `Python` · `PyQt` | `2.15.17` |
+
+> 这三个都没有发 GitHub Release，版本号取自仓库内的 `package.json` / `pyproject.toml`。
 
 ---
 
